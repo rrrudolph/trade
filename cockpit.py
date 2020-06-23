@@ -1,8 +1,6 @@
-from request import request_data, data_request_complete
-from functions import update_df
-from trade_alert import trade_alert
+# from request import request_data, data_request_complete
 
-''' The main functions have been created so that data can
+''' The df building functions have been created so that data can
     be added intermittently. I plan on only running the
     program during the day, so each morning the overnight
     data will be requested and then for the rest of the day
@@ -14,11 +12,10 @@ from trade_alert import trade_alert
     
     Trade alerts are controlled via...  '''
 
-while True:
-    request_data()
-    if data_request_complete == True:
-        update_df()
-
+# while True:
+    # request_data()
+    # if data_request_complete == True:
+    #     update_df()
 
 
 # ... Function Parameters and Settings ...
@@ -46,19 +43,15 @@ adr_window = {'length': 5}
 
 # Update DataFrame Functions
 
-# sw_pct_adr multiplier for setting swing ratings
-# (might need to make this timeframe specific)
-sw_pct_buffer = 100 
-
-
 # do these need to be TF specific?
 trade_zones = {'height_multiplier': 0.02,
                'length_multiplier': 8,
-               'buffer_multiplier': .25
+               'buffer_multiplier': 0.25
               }
 
 sr_zones = {'height_multiplier': 0.02,
             'length_multiplier': 10,
-            'lookback_multiplier': 0.2 
+            'lookback_multiplier': 0.2,
+            'buffer_multiplier': 0.25
            }
 
