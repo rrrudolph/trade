@@ -27,7 +27,7 @@
 # (threshold probably won't adapt to a large variety
 #  of timeframe variation. 1min will need higher values
 #  than 4h)
-mommentum = {'active': True,
+momentum = {'active': True,
              'threshold': 2,  
              'weight_multiplier': 1
 }
